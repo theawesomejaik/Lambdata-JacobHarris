@@ -6,21 +6,19 @@ To show the differences of Apocrita suborders
 
 Classifies and differentiates insects of a specific order
 
-Utilizing pandas, numpy, and sklearn (required installs) this provides functions that count nulls and concats columns for these Dataframes and respective tests
+Utilizing pandas, numpy, and sklearn (required installs) this provides functions that count nulls and concats for Dataframes and respective tests
 
-Example function to count nulls:
-```def null_count(df):
-        return df.isnull().sum().sum()```
+Example function to combine dataframes:
+```def combine(df_left, df_right):
+    return pd.concat([df_left, df_right])```
 
-Example test for null count function:
-```def inc(x):
-    """Fxn that increments a number by 1"""
-    return x + 1```
-
-```def test_null_count():
-    """Test for nulls"""
-    assert inc(1) == 2
-    assert inc(4) == 5```
+Example test for concat function
+```s1 = pd.Series(['a', 'b'])
+s2 = pd.Series(['c', 'd'])
+test_comb = Apocrita(s1, s2)    
+def test_combine():
+    """test for concat"""
+    assert test_comb.combine(s1, s2).equals(pd.concat([s1, s2]))```
 
 Jacob Harris
 MIT License
