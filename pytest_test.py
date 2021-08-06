@@ -1,14 +1,15 @@
 import pytest 
+import numpy as np
+import pandas as pd
 from helper_functions import *
 
-def inc(x):
-    """Fxn that increments a number by 1"""
-    return x + 1
-
 def test_null_count():
-    """Test for nulls"""
-    assert inc(1) == 2
-    assert inc(4) == 5
+    data - { 'set_of_numbers': [1,2,3,4,5,np.nan,6,7,np.nan]}
+    df = pd.DataFrame(data,columns=['set_of_numbers'])
+    df = Apocrita(data)
+    assert df.null_count() == 2
+
+
     
 s1 = pd.Series(['a', 'b'])
 s2 = pd.Series(['c', 'd'])
